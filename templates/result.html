@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>換算結果</title>
+    <style>
+        body {
+            font-family: "メイリオ", sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* テーマごとの背景と文字色 */
+        body.blue-theme {
+            background-color: #e6f0ff;
+            color: #004080;
+        }
+
+        body.pink-theme {
+            background-color: #ffe6f0;
+            color: #99004d;
+        }
+
+        body.pastel-theme {
+            background-color: #fef6e4;
+            color: #726e75;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+        }
+
+        .result-box {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007acc;
+            margin-bottom: 30px;
+            word-wrap: break-word;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #005f99;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #005f99;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #005f99;
+            color: white;
+        }
+
+        /* テーマ切替ボタン */
+        .theme-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .theme-buttons button {
+            margin: 0 5px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .theme-buttons button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body class="blue-theme"> <!-- 初期はブルー -->
+    <div class="theme-buttons">
+      <button onclick="setTheme('blue')">ブルー</button>
+      <button onclick="setTheme('pink')">ピンク</button>
+      <button onclick="setTheme('pastel')">パステル</button>
+    </div>
+    <div class="container">
+        <h2>✨換算結果✨</h2>
+        <div class="result-box">{{ result }}</div>
+        <a href="{{ url_for('index') }}">← もう一度換算する</a>
+    </div>
+
+    <script>
+      function setTheme(theme) {
+        document.body.className = theme + '-theme';
+      }
+    </script>
+</body>
+</html>
+
+

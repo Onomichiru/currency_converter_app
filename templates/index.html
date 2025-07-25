@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>💱通貨換算アプリ💰</title>
+    <style>
+        /* 全体の背景と文字フォント */
+        body {
+            background-color: #e6f0ff; /* 淡い青 */
+            font-family: "メイリオ", sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+
+            /* フレックスで中央寄せ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* フォーム全体のコンテナ */
+        .container {
+            background-color: #fff; /* 白背景 */
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 350px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        /* 見出し */
+        h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+        }
+
+        /* ラベル */
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #003366;
+        }
+
+        /* ラジオボタンの間隔 */
+        .radio-group input {
+            margin-right: 8px;
+            margin-left: 0;
+        }
+
+        /* テキストボックスとセレクト */
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* 送信ボタン */
+        input[type="submit"] {
+            margin-top: 30px;
+            width: 100%;
+            background-color: #007acc;
+            border: none;
+            padding: 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* ボタンホバー */
+        input[type="submit"]:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>💱通貨換算アプリ💰</h2>
+        <form method="post">
+            <label>換算方向:</label><br>
+            <div class="radio-group">
+                <input type="radio" name="direction" value="to_foreign" checked> 円 → 外貨<br>
+                <input type="radio" name="direction" value="to_yen"> 外貨 → 円<br><br>
+            </div>
+    
+        
+            <label>金額（円）:</label>
+            <input type="number" name="yen" step="0.01" required><br><br>
+
+            <label>通貨を選んでください:</label>
+            <select name="currency">
+                <option value="USD">米ドル (USD)</option>
+                <option value="EUR">ユーロ (EUR)</option>
+                <option value="KRW">韓国ウォン (KRW)</option>
+            </select><br><br>
+
+            <input type="submit" value="換算する">
+        </form>
+    </div>
+</body>
+</html>
